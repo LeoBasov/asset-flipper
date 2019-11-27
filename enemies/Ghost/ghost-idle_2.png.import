@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/adventurer-smrslt-03.png-060b39db40cef97f131354ddbcfc5e9d.stex"
+path="res://.import/ghost-idle_2.png-c4be6dace43885451278aca39bc806dc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-03.png"
-dest_files=[ "res://.import/adventurer-smrslt-03.png-060b39db40cef97f131354ddbcfc5e9d.stex" ]
+source_file="res://enemies/Ghost/ghost-idle_2.png"
+dest_files=[ "res://.import/ghost-idle_2.png-c4be6dace43885451278aca39bc806dc.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/adventurer-smrslt-03.png-060b39db40cef97f131354ddbcfc5e9d.stex"
+path="res://.import/ghost-vanish_5.png-a2ba06f8402b69640d3cc1ada7174f53.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://player/Adventurer-1.5/Individual Sprites/adventurer-smrslt-03.png"
-dest_files=[ "res://.import/adventurer-smrslt-03.png-060b39db40cef97f131354ddbcfc5e9d.stex" ]
+source_file="res://enemies/Ghost/ghost-vanish_5.png"
+dest_files=[ "res://.import/ghost-vanish_5.png-a2ba06f8402b69640d3cc1ada7174f53.stex" ]
 
 [params]
 

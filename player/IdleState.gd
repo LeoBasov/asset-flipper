@@ -11,5 +11,8 @@ func update(object):
 		emit_signal("pop")
 		emit_signal("push", "JumpState")
 		object.velocity.y = -500
+	elif Input.is_action_pressed("ui_select"):
+		emit_signal("pop")
+		emit_signal("push", "Attack2State")
 		
 	object.get_node("AnimatedSprite").play()
