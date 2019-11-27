@@ -20,7 +20,7 @@ scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 
 [node name="BackGround" parent="." instance=ExtResource( 3 )]
-tile_data = PoolIntArray( 65589, 1, 0, 131125, 0, 0, 327710, 1, 0, 393246, 0, 0, 458766, 1, 0, 524302, 0, 0 )
+tile_data = PoolIntArray( 65589, 1, 0, 131125, 0, 0, 327710, 1, 0, 393246, 0, 0, 458766, 1, 0, 458802, 6, 0, 458803, 4, 0, 458813, 4, 0, 458823, 4, 0, 458833, 5, 0, 524302, 0, 0, 524338, 7, 0, 524339, 3, 0, 524349, 3, 0, 524359, 3, 0, 524369, 8, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( 490.282, 301.468 )
