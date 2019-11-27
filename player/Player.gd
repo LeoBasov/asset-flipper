@@ -13,3 +13,12 @@ func _physics_process(delta):
 	
 	velocity.y += delta * GRAVITY
 	velocity = move_and_slide(velocity, Vector2(0, -1))
+	
+func reset():
+	position = Vector2(0.0, 0.0)
+	velocity = Vector2(0.0, 0.0)
+	
+	$AnimatedSprite.flip_h = false
+	
+	$FSM.pop_state()
+	$FSM.push_state($FSM/IdleState)
