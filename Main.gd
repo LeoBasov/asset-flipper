@@ -11,7 +11,8 @@ func reset():
 	$Player.reset()
 	$Player.position = Vector2(490, 340)
 	
-	$Ghost.reset()
+	for enemy in get_tree().get_nodes_in_group("Enemies"):
+		enemy.reset()
 
 func _on_PlayerVisNotifier2D_screen_exited():
 	reset()

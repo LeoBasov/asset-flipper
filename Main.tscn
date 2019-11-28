@@ -26,7 +26,14 @@ tile_data = PoolIntArray( 65589, 1, 0, 131125, 0, 0, 327710, 1, 0, 393246, 0, 0,
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
 position = Vector2( 881.136, 216.508 )
 
+[node name="Ghost2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1675.3, 311.683 )
+
+[node name="Ghost3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1396.42, 26.6571 )
+
 [node name="Player" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
 position = Vector2( 490.282, 301.468 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
