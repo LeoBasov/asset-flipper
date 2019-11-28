@@ -5,6 +5,9 @@ var animation_running : bool
 signal die
 
 func _ready():
+	reset()
+	
+func reset():
 	animation_running = false
 
 func update(object):

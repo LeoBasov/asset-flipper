@@ -1,20 +1,24 @@
 extends KinematicBody2D
 
-const GRAVITY = 1000.0
-const WALK_SPEED = 200
+export var fly_speed = 200
+export var max_live : float = 10
 
+var live : float
 var velocity = Vector2(0.0, 0.0)
+var starting_position : Vector2
 
 var damage : bool
-var live : float
 
 func _ready():
+	starting_position = position
 	reset()
 	
 func reset():
-	live = 10.0
+	live = max_live
 	damage = false
 	collision_layer = 2
+	position = starting_position
+	velocity = Vector2(0.0, 0.0)
 	show()
 	
 	$FSM.pop_state()
