@@ -33,5 +33,4 @@ func hit(damage_pts):
 		damage = true
 
 func _on_DieState_die():
-	collision_layer = 524288
 	hide()

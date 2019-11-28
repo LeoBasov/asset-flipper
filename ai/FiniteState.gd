@@ -7,6 +7,7 @@ signal push(state)
 
 func _ready():
 	add_to_group("States")
+	reset()
 	
 func reset():
 	pass

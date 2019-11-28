@@ -7,6 +7,10 @@ export var damage : float = 10.0
 func _ready():
 	animation_running = false
 	attack_object = null
+	
+func reset():
+	animation_running = false
+	attack_object = null
 
 func update(object):
 	animation_running = true

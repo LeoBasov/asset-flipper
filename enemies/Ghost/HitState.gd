@@ -2,9 +2,6 @@ extends "res://ai/FiniteState.gd"
 
 var current_count : int
 var max_count : int = 50
-
-func  _ready():
-	reset()
 	
 func reset():
 	current_count = 0

@@ -4,8 +4,8 @@ var animation_running : bool
 var attack_object_back
 var attack_object_front
 export var damage : float = 5.0
-
-func _ready():
+	
+func reset():
 	animation_running  = false
 	attack_object_back = null
 	attack_object_front = null

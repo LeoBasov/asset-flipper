@@ -2,9 +2,6 @@ extends "res://ai/FiniteState.gd"
 
 var jmp_button_released : bool
 var jmp_sound_played : bool
-
-func _ready():
-	reset()
 	
 func reset():
 	jmp_button_released = false

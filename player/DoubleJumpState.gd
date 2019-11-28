@@ -1,9 +1,6 @@
 extends "res://ai/FiniteState.gd"
 
 var jump_sound_played : bool
-
-func _ready():
-	reset()
 	
 func reset():
 	jump_sound_played = false
