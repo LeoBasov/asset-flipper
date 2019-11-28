@@ -3,6 +3,7 @@ extends "res://ai/FiniteState.gd"
 var animation_running : bool
 var attack_object_back
 var attack_object_front
+export var damage : float = 5.0
 
 func _ready():
 	animation_running  = false
@@ -32,7 +33,7 @@ func attack(enemy_object, player_object):
 	for enenmy in get_tree().get_nodes_in_group("Enemies"):
 		if enenmy.name == enemy_object.name:
 			enenmy.position += 0.1*(enenmy.position - player_object.position)
-			enenmy.hit()
+			enenmy.hit(damage)
 
 func _on_Attack2AreaFront_body_entered(body):
  	attack_object_front = body

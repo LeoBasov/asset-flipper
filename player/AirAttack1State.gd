@@ -2,6 +2,7 @@ extends "res://ai/FiniteState.gd"
 
 var animation_running : bool
 var attack_object
+export var damage : float = 10.0
 
 func _ready():
 	animation_running = false
@@ -26,7 +27,7 @@ func attack(enenmy_object, player_object):
 	for enenmy in get_tree().get_nodes_in_group("Enemies"):
 		if enenmy.name == enenmy_object.name:
 			enenmy.position += 0.1*(enenmy.position - player_object.position)
-			enenmy.hit()
+			enenmy.hit(damage)
 
 func _on_AirAttack1Area_body_entered(body):
 	attack_object = body
