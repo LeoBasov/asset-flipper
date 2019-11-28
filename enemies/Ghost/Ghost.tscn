@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://enemies/Ghost/Ghost.gd" type="Script" id=1]
 [ext_resource path="res://enemies/Ghost/ghost-idle_1.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://enemies/Ghost/ghost-vanish_5.png" type="Texture" id=13]
 [ext_resource path="res://enemies/Ghost/ghost-vanish_6.png" type="Texture" id=14]
 [ext_resource path="res://enemies/Ghost/ghost-vanish_7.png" type="Texture" id=15]
+[ext_resource path="res://enemies/Ghost/FSM.gd" type="Script" id=16]
+[ext_resource path="res://enemies/Ghost/IdelState.gd" type="Script" id=17]
+[ext_resource path="res://enemies/Ghost/DieState.gd" type="Script" id=18]
+[ext_resource path="res://enemies/Ghost/HitState.gd" type="Script" id=19]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -45,7 +49,19 @@ frames = SubResource( 1 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( 0, -7.96104 )
 shape = SubResource( 2 )
-[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource( 16 )
+
+[node name="IdleState" type="Node" parent="FSM"]
+script = ExtResource( 17 )
+
+[node name="DieState" type="Node" parent="FSM"]
+script = ExtResource( 18 )
+
+[node name="HitState" type="Node" parent="FSM"]
+script = ExtResource( 19 )
+[connection signal="animation_finished" from="AnimatedSprite" to="FSM/DieState" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="die" from="FSM/DieState" to="." method="_on_DieState_die"]

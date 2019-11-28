@@ -6,7 +6,7 @@ func _init():
 	self.state_stack = []
 	
 func _ready():
-	for node in get_tree().get_nodes_in_group("States"):
+	for node in get_children():
 		node.connect("pop", self, "_on_State_pop")
 		node.connect("push", self, "_on_State_push")
 	
