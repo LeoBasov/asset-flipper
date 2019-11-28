@@ -13,7 +13,7 @@ func update(object):
 	
 	if attack_object:
 		if object.get_node("AnimatedSprite").frame == 1:
-			attack(attack_object)
+			attack(attack_object, object)
 			
 	if object.velocity.y == 0.0:
 		animation_running = false
@@ -22,9 +22,10 @@ func update(object):
 	
 	object.get_node("AnimatedSprite").play()
 	
-func attack(object):
+func attack(enenmy_object, player_object):
 	for enenmy in get_tree().get_nodes_in_group("Enemies"):
-		if enenmy.name == object.name:
+		if enenmy.name == enenmy_object.name:
+			enenmy.position += 0.1*(enenmy.position - player_object.position)
 			enenmy.hit()
 
 func _on_AirAttack1Area_body_entered(body):

@@ -15,10 +15,10 @@ func update(object):
 	
 	if attack_object_front:
 		if object.get_node("AnimatedSprite").frame == 3:
-			attack(attack_object_front)
+			attack(attack_object_front, object)
 	elif attack_object_back:
 		if object.get_node("AnimatedSprite").frame == 3:
-			attack(attack_object_back)
+			attack(attack_object_back, object)
 	
 	object.get_node("AnimatedSprite").play()
 
@@ -28,9 +28,10 @@ func _on_AnimatedSprite_animation_finished():
 		emit_signal("pop")
 		emit_signal("push", "IdleState")
 		
-func attack(object):
+func attack(enemy_object, player_object):
 	for enenmy in get_tree().get_nodes_in_group("Enemies"):
-		if enenmy.name == object.name:
+		if enenmy.name == enemy_object.name:
+			enenmy.position += 0.1*(enenmy.position - player_object.position)
 			enenmy.hit()
 
 func _on_Attack2AreaFront_body_entered(body):
