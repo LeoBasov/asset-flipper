@@ -148,3 +148,7 @@ shape = SubResource( 4 )
 [node name="DoubleJumpState" type="Node" parent="FSM"]
 script = ExtResource( 43 )
 [connection signal="animation_finished" from="AnimatedSprite" to="FSM/Attack2State" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="FSM/Attack2State/Attack2AreaFront" to="FSM/Attack2State" method="_on_Attack2AreaFront_body_entered"]
+[connection signal="body_exited" from="FSM/Attack2State/Attack2AreaFront" to="FSM/Attack2State" method="_on_Attack2AreaFront_body_exited"]
+[connection signal="body_entered" from="FSM/Attack2State/Attack2AreaBack" to="FSM/Attack2State" method="_on_Attack2AreaBack_body_entered"]
+[connection signal="body_exited" from="FSM/Attack2State/Attack2AreaBack" to="FSM/Attack2State" method="_on_Attack2AreaBack_body_exited"]
