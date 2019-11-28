@@ -3,7 +3,10 @@ extends "res://ai/FiniteState.gd"
 func update(object):
 	object.get_node("AnimatedSprite").animation = "fall"
 	
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_select"):
+		emit_signal("pop")
+		emit_signal("push", "AirAttack1State")
+	elif Input.is_action_pressed("ui_left"):
 		object.get_node("AnimatedSprite").flip_h = true
 		object.velocity.x = -object.WALK_SPEED
 	elif Input.is_action_pressed("ui_right"):

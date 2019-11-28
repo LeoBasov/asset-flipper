@@ -20,7 +20,11 @@ func update(object):
 	if Input.is_action_just_released("ui_up"):
 		jmp_button_released = true
 	
-	if Input.is_action_pressed("ui_left"):
+	if Input.is_action_pressed("ui_select"):
+		emit_signal("pop")
+		emit_signal("push", "AirAttack1State")
+		reset()
+	elif Input.is_action_pressed("ui_left"):
 		object.get_node("AnimatedSprite").flip_h = true
 		object.velocity.x = -object.WALK_SPEED
 	elif Input.is_action_pressed("ui_right"):
