@@ -33,7 +33,9 @@ animations = [ {
 radius = 35.72
 height = 51.075
 
-[node name="Ghost" type="KinematicBody2D"]
+[node name="Ghost" type="KinematicBody2D" groups=[
+"Enemies",
+]]
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

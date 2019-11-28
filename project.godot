@@ -40,6 +40,13 @@ ui_reset={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemy"
+2d_physics/layer_3="terrain"
+2d_physics/layer_20="death"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
