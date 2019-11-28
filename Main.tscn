@@ -30,10 +30,12 @@ position = Vector2( 881.136, 216.508 )
 position = Vector2( 490.282, 301.468 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
 current = true
 limit_bottom = 500
 
 [node name="PlayerVisNotifier2D" type="VisibilityNotifier2D" parent="Player"]
+visible = false
 position = Vector2( 8.15331, 15.0524 )
 scale = Vector2( 4.115, 4.17772 )
 [connection signal="screen_exited" from="Player/PlayerVisNotifier2D" to="." method="_on_PlayerVisNotifier2D_screen_exited"]
