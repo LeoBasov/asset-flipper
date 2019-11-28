@@ -9,7 +9,6 @@ func reset():
 	alive = true
 	$AnimatedSprite.animation = "idle"
 	collision_layer = 2
-	collision_mask = 1
 	show()
 
 func _process(delta):
@@ -19,8 +18,7 @@ func hit():
 	die()
 		
 func die():
-	collision_layer = 20
-	collision_mask = 20
+	collision_layer = 524288 #layer 20 = pow(2, 19)
 	$AnimatedSprite.animation = "death"
 	alive = false
 
