@@ -11,5 +11,8 @@ func update(object):
 	elif object.live <= 0.0:
 		emit_signal("pop")
 		emit_signal("push", "DieState")
+	elif object.player:
+		emit_signal("pop")
+		emit_signal("push", "HuntState")
 	
 	object.get_node("AnimatedSprite").play()
