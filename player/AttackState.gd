@@ -40,7 +40,6 @@ func _on_Attack2AreaFront_body_entered(body):
 func _on_Attack2AreaFront_body_exited(body):
 	attack_object_front = null
 
-
 func _on_Attack2AreaBack_body_entered(body):
 	attack_object_back = body
 
