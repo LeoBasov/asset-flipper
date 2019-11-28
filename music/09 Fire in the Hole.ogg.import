@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09 Fire in the Hole.ogg-3576db5bcb8897b77f7d9d9c5d8b2733.oggstr"
+
+[deps]
+
+source_file="res://music/09 Fire in the Hole.ogg"
+dest_files=[ "res://.import/09 Fire in the Hole.ogg-3576db5bcb8897b77f7d9d9c5d8b2733.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
