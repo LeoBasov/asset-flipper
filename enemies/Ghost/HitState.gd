@@ -9,6 +9,9 @@ func reset():
 	sound_played = false
 
 func update(object):
+	object.get_node("AnimatedSprite").animation = "idle"
+	object.get_node("AnimatedSprite").play()
+	
 	if !sound_played:
 		sound_played = true
 		
