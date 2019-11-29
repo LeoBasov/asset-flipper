@@ -36,7 +36,10 @@ func _process(delta):
 				node.velocity = 2*fly_speed*(player.position - node.position).normalized()
 	
 func _physics_process(delta):
-	move_and_collide(velocity*delta)
+	var collision = move_and_collide(velocity*delta)
+	
+	if collision and collision.collider.is_in_group("Player"):
+		collision.collider.hit(0.0)
 	
 func hit(damage_pts):
 	if !damage:

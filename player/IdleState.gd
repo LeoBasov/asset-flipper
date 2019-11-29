@@ -4,6 +4,10 @@ func update(object):
 	object.get_node("AnimatedSprite").animation = "idle"
 	object.velocity.x = 0
 	
+	if object.damage:
+		emit_signal("pop")
+		emit_signal("push", "HitState")
+	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		emit_signal("pop")
 		emit_signal("push", "RunState")
