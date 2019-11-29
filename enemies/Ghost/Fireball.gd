@@ -4,6 +4,7 @@ var velocity : Vector2
 var set : bool
 
 func _ready():
+	$AnimatedSprite.play()
 	velocity = Vector2(0, 0)
 	set = false
 
