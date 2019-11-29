@@ -29,6 +29,12 @@ func reset():
 func _process(delta):
 	$FSM.update(self)
 	
+	for node in $FSM/ShriekState.get_children():
+		if node.is_in_group("Fireballs"):
+			if !node.set:
+				node.set = true
+				node.velocity = 2*fly_speed*(player.position - node.position).normalized()
+	
 func _physics_process(delta):
 	move_and_collide(velocity*delta)
 	
