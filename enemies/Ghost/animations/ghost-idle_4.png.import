@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/ghost-vanish_1.png-d6d87129699eb43fc9b44154595e5f21.stex"
+path="res://.import/ghost-idle_4.png-caa3c7079ad46d138e95b1dd876a3214.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/Ghost/ghost-vanish_1.png"
-dest_files=[ "res://.import/ghost-vanish_1.png-d6d87129699eb43fc9b44154595e5f21.stex" ]
+source_file="res://enemies/Ghost/animations/ghost-idle_4.png"
+dest_files=[ "res://.import/ghost-idle_4.png-caa3c7079ad46d138e95b1dd876a3214.stex" ]
 
 [params]
 

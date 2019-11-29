@@ -1,5 +1,6 @@
 extends "res://ai/FiniteState.gd"
 
+var sound_played : bool
 var animation_running : bool
 var attack_object_back
 var attack_object_front
@@ -9,10 +10,15 @@ func reset():
 	animation_running  = false
 	attack_object_back = null
 	attack_object_front = null
+	sound_played = false
 
 func update(object):
 	animation_running = true
 	object.get_node("AnimatedSprite").animation = "attack-2"
+	
+	if !sound_played and object.get_node("AnimatedSprite").frame == 1:
+		sound_played =  true
+		$Attack2Sound.play()
 	
 	if attack_object_front:
 		if object.get_node("AnimatedSprite").frame == 3:
@@ -26,6 +32,7 @@ func update(object):
 func _on_AnimatedSprite_animation_finished():
 	if animation_running:
 		animation_running = false
+		sound_played = false
 		emit_signal("pop")
 		emit_signal("push", "IdleState")
 		

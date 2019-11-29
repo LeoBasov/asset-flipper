@@ -10,7 +10,7 @@ func _process(delta):
 	
 func reset():
 	$Player.reset()
-	$Player.position = Vector2(490, 340)
+	$Player.position = Vector2(495, 300)
 	
 	for enemy in get_tree().get_nodes_in_group("Enemies"):
 		enemy.reset()
