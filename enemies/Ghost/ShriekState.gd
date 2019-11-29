@@ -15,9 +15,11 @@ func update(object):
 	object.get_node("AnimatedSprite").animation = "shriek"
 	
 	if object.damage:
+		animation_playing = false
 		emit_signal("pop")
 		emit_signal("push", "HitState")
 	elif object.live <= 0.0:
+		animation_playing = false
 		emit_signal("pop")
 		emit_signal("push", "DieState")
 	

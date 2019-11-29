@@ -1,4 +1,6 @@
 extends "res://ai/FiniteState.gd"
+
+var min_distance : float = 500.0
 	
 func reset():
 	pass
@@ -9,7 +11,12 @@ func update(object):
 
 	object.get_node("AnimatedSprite").animation = "idle"
 	
-	object.velocity = object.fly_speed*(object.player.position - object.position).normalized()
+	var dist_vec = object.player.position - object.position
+	
+	if dist_vec.length() > min_distance:
+		object.velocity = object.fly_speed*dist_vec.normalized()
+	else:
+		object.velocity = Vector2(0, 0)
 	
 	if object.damage:
 		$Timer.stop()

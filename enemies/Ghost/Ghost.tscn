@@ -8,17 +8,17 @@
 [ext_resource path="res://enemies/Ghost/animations/ghost-idle_5.png" type="Texture" id=6]
 [ext_resource path="res://enemies/Ghost/animations/ghost-idle_6.png" type="Texture" id=7]
 [ext_resource path="res://enemies/Ghost/animations/ghost-idle_7.png" type="Texture" id=8]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_1.png" type="Texture" id=9]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_2.png" type="Texture" id=10]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_3.png" type="Texture" id=11]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_4.png" type="Texture" id=12]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_5.png" type="Texture" id=13]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_6.png" type="Texture" id=14]
-[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_7.png" type="Texture" id=15]
-[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_1.png" type="Texture" id=16]
-[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_2.png" type="Texture" id=17]
-[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_3.png" type="Texture" id=18]
-[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_4.png" type="Texture" id=19]
+[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_1.png" type="Texture" id=9]
+[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_2.png" type="Texture" id=10]
+[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_3.png" type="Texture" id=11]
+[ext_resource path="res://enemies/Ghost/animations/ghost-shriek_4.png" type="Texture" id=12]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_1.png" type="Texture" id=13]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_2.png" type="Texture" id=14]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_3.png" type="Texture" id=15]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_4.png" type="Texture" id=16]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_5.png" type="Texture" id=17]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_6.png" type="Texture" id=18]
+[ext_resource path="res://enemies/Ghost/animations/ghost-vanish_7.png" type="Texture" id=19]
 [ext_resource path="res://enemies/Ghost/FSM.gd" type="Script" id=20]
 [ext_resource path="res://enemies/Ghost/IdelState.gd" type="Script" id=21]
 [ext_resource path="res://enemies/Ghost/DieState.gd" type="Script" id=22]
@@ -34,14 +34,14 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "death",
-"speed": 7.0
-}, {
-"frames": [ ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "shriek",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "death",
 "speed": 7.0
 } ]
 
@@ -99,8 +99,8 @@ one_shot = true
 
 [node name="ShriekState" type="Node" parent="FSM"]
 script = ExtResource( 26 )
-[connection signal="animation_finished" from="AnimatedSprite" to="FSM/ShriekState" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FSM/DieState" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite" to="FSM/ShriekState" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="AgroRadius" to="." method="_on_AgroRadius_body_entered"]
 [connection signal="die" from="FSM/DieState" to="." method="_on_DieState_die"]
 [connection signal="timeout" from="FSM/HuntState/Timer" to="FSM/HuntState" method="_on_Timer_timeout"]
