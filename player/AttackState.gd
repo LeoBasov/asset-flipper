@@ -16,7 +16,7 @@ func update(object):
 	animation_running = true
 	object.get_node("AnimatedSprite").animation = "attack-2"
 	
-	if !sound_played and object.get_node("AnimatedSprite").frame == 1:
+	if !sound_played:
 		sound_played =  true
 		$Attack2Sound.play()
 	

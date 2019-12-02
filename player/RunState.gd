@@ -7,8 +7,11 @@ func update(object):
 		emit_signal("pop")
 		emit_signal("push", "JumpState")
 		object.velocity.y = -500
-		
-	if Input.is_action_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_select"):
+		object.velocity = Vector2(0, 0)
+		emit_signal("pop")
+		emit_signal("push", "Attack2State")
+	elif Input.is_action_pressed("ui_left"):
 		object.get_node("AnimatedSprite").flip_h = true
 		object.velocity.x = -object.WALK_SPEED
 	elif Input.is_action_pressed("ui_right"):
