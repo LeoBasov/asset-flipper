@@ -37,16 +37,13 @@ position = Vector2( 1675.3, 311.683 )
 position = Vector2( 1396.42, 26.6571 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 position = Vector2( 501.172, 299.71 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-visible = false
 current = true
 limit_bottom = 500
 
 [node name="PlayerVisNotifier2D" type="VisibilityNotifier2D" parent="Player"]
-visible = false
 position = Vector2( 8.15331, 15.0524 )
 scale = Vector2( 4.115, 4.17772 )
 
