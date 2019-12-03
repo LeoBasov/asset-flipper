@@ -3,10 +3,8 @@ extends MarginContainer
 var index : int = 0
 var multiplicator : float = 1.0
 var color : float = 0.0
-var played : bool
 
 func _ready():
-	played = false
 	color = 0.0
 
 func _process(delta):
@@ -19,18 +17,16 @@ func _process(delta):
 		if index > 0:
 			index -= 1
 			$MenuSelect.play()
-			played = false
-		elif !$MenuSelect.playing and !$MenuSelectBlock.playing and !played:
-			played = true
+		elif !$MenuSelect.playing and !$MenuSelectBlock.playing and $MenuBlockSoundTimer.is_stopped():
 			$MenuSelectBlock.play()
+			$MenuBlockSoundTimer.start()
 	elif Input.is_action_pressed("ui_down"):
 		if index < 1:
 			index += 1
 			$MenuSelect.play()
-			played = false
-		elif !$MenuSelect.playing and !$MenuSelectBlock.playing and !played:
-			played = true
+		elif !$MenuSelect.playing and !$MenuSelectBlock.playing and $MenuBlockSoundTimer.is_stopped():
 			$MenuSelectBlock.play()
+			$MenuBlockSoundTimer.start()
 	
 	if Input.is_action_pressed("ui_accept") and index == 0:
 		get_tree().change_scene("res://Main.tscn")
