@@ -23,7 +23,7 @@ margin_right = 1090.0
 margin_bottom = 600.0
 rect_min_size = Vector2( 0, 600 )
 
-[node name="New Game" type="Label" parent="VBoxContainer"]
+[node name="NewGame" type="Label" parent="VBoxContainer"]
 margin_top = 604.0
 margin_right = 1090.0
 margin_bottom = 618.0
