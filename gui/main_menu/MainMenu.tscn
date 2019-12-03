@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gui/main_menu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://gui/main_menu/title.png" type="Texture" id=2]
 [ext_resource path="res://music/11 No Tomorrow.ogg" type="AudioStream" id=3]
+[ext_resource path="res://gui/main_menu/Menu__008.ogg" type="AudioStream" id=4]
+[ext_resource path="res://gui/main_menu/Menu__009.ogg" type="AudioStream" id=5]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -39,6 +41,12 @@ text = "Quit"
 align = 1
 valign = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="MainTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 autoplay = true
+
+[node name="MenuSelect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="MenuSelectBlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
