@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var velocity : Vector2
 var set : bool
+export var damage : float = 2.0
 
 func _ready():
 	$AnimatedSprite.play()
@@ -15,5 +16,5 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity*delta)
 	
 	if collision and collision.collider.is_in_group("Player"):
-		collision.collider.hit(0.0)
+		collision.collider.hit(damage)
 		queue_free()
