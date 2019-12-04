@@ -31,8 +31,7 @@ func reset():
 		state.reset()
 
 func _on_PlayerVisNotifier2D_screen_exited():
-	reset()
-
+	get_tree().change_scene("res://gui/game_over/GameOver.tscn")
 
 func _on_Player_dead():
-	reset()
+	get_tree().change_scene("res://gui/game_over/GameOver.tscn")
