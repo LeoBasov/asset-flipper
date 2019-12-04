@@ -88,4 +88,5 @@ script = ExtResource( 8 )
 pause_mode = 2
 wait_time = 0.3
 one_shot = true
+[connection signal="dead" from="Player" to="." method="_on_Player_dead"]
 [connection signal="screen_exited" from="Player/PlayerVisNotifier2D" to="." method="_on_PlayerVisNotifier2D_screen_exited"]

@@ -8,6 +8,8 @@ var velocity = Vector2(0.0, 0.0)
 export var live : float = 10.0
 var damage : bool
 
+signal dead
+
 func _ready():
 	$FSM.push_state($FSM/IdleState)
 	
@@ -22,6 +24,9 @@ func hit(damage_pts):
 		live -= damage_pts
 		$CanvasLayer/HUD/HBoxContainer/TextureProgress.value = 100.0*(live/max_live)
 		damage = true
+		
+func dead():
+	emit_signal("dead")
 	
 func reset():
 	damage = false

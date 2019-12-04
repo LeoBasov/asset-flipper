@@ -32,3 +32,7 @@ func reset():
 
 func _on_PlayerVisNotifier2D_screen_exited():
 	reset()
+
+
+func _on_Player_dead():
+	reset()
