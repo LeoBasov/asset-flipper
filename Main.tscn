@@ -45,18 +45,12 @@ position = Vector2( 1396.42, 26.6571 )
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
 pause_mode = 1
-editor/display_folded = true
 position = Vector2( 501.172, 299.71 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 pause_mode = 1
 current = true
 limit_bottom = 500
-
-[node name="PlayerVisNotifier2D" type="VisibilityNotifier2D" parent="Player"]
-pause_mode = 1
-position = Vector2( 8.15331, 15.0524 )
-scale = Vector2( 4.115, 4.17772 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
@@ -66,4 +60,3 @@ stream = ExtResource( 6 )
 
 [node name="Pause" parent="CanvasLayer" instance=ExtResource( 7 )]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
-[connection signal="screen_exited" from="Player/PlayerVisNotifier2D" to="." method="_on_PlayerVisNotifier2D_screen_exited"]

@@ -38,3 +38,6 @@ func reset():
 	
 	$FSM.pop_state()
 	$FSM.push_state($FSM/IdleState)
+
+func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("dead")

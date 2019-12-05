@@ -20,8 +20,5 @@ func reset():
 	for state in get_tree().get_nodes_in_group("States"):
 		state.reset()
 
-func _on_PlayerVisNotifier2D_screen_exited():
-	get_tree().change_scene("res://gui/game_over/GameOver.tscn")
-
 func _on_Player_dead():
 	get_tree().change_scene("res://gui/game_over/GameOver.tscn")

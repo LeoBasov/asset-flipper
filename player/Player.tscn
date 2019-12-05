@@ -184,6 +184,7 @@ rotation = 1.5708
 shape = SubResource( 5 )
 
 [node name="FSM" type="Node" parent="."]
+editor/display_folded = true
 script = ExtResource( 49 )
 
 [node name="IdleState" type="Node" parent="FSM"]
@@ -229,10 +230,13 @@ script = ExtResource( 60 )
 script = ExtResource( 61 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+editor/display_folded = true
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource( 62 )]
-[connection signal="animation_finished" from="AnimatedSprite" to="FSM/Attack2State" method="_on_AnimatedSprite_animation_finished"]
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 [connection signal="animation_finished" from="AnimatedSprite" to="FSM/DieState" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="animation_finished" from="AnimatedSprite" to="FSM/Attack2State" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="animation_finished" from="AnimatedSprite" to="FSM/AirAttack1State" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Attack2AreaFront" to="FSM/Attack2State" method="_on_Attack2AreaFront_body_entered"]
 [connection signal="body_exited" from="Attack2AreaFront" to="FSM/Attack2State" method="_on_Attack2AreaFront_body_exited"]
@@ -240,3 +244,4 @@ script = ExtResource( 61 )
 [connection signal="body_exited" from="Attack2AreaBack" to="FSM/Attack2State" method="_on_Attack2AreaBack_body_exited"]
 [connection signal="body_entered" from="AirAttack1Area" to="FSM/AirAttack1State" method="_on_AirAttack1Area_body_entered"]
 [connection signal="body_exited" from="AirAttack1Area" to="FSM/AirAttack1State" method="_on_AirAttack1Area_body_exited"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
