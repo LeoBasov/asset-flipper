@@ -7,6 +7,18 @@ var color : float = 0.0
 func _ready():
 	color = 0.0
 	$ColorRect.modulate  = Color(1, 1, 1, 0.5)
+	hide()
+	set_process(false)
+	
+func activate():
+	get_tree().paused = true
+	show()
+	set_process(true)
+	
+func deactivate():
+	get_tree().paused = false
+	hide()
+	set_process(false)
 	
 func _process(delta):
 	color += delta*multiplicator
@@ -30,7 +42,7 @@ func _process(delta):
 			$MenuBlockSoundTimer.start()
 			
 	if Input.is_action_pressed("ui_accept") and index == 0:
-		get_tree().paused = !(get_tree().paused)
+		deactivate()
 	elif Input.is_action_pressed("ui_accept") and index == 1:
 		get_tree().quit()
 		
