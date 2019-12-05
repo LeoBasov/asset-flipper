@@ -2,7 +2,7 @@ extends "res://ai/FiniteState.gd"
 
 var sound_played : bool
 var current_count : int
-var max_count : int = 10
+var max_count : int = 5
 	
 func reset():
 	current_count = 0
@@ -12,16 +12,15 @@ func update(object):
 	object.get_node("AnimatedSprite").animation = "hurt"
 	object.get_node("AnimatedSprite").play()
 	
-	if !sound_played:
-		sound_played = true
+	if $Timer.is_stopped():
+		$Timer.start()
 		
 	object.velocity = Vector2(0, 0)
 	
 	if current_count < max_count:
-		object.modulate.a = 0.5 if Engine.get_frames_drawn() % 2 == 0 else 1.0
-		current_count += 1
+		object.modulate.a = 0.5 if current_count % 2 == 0 else 1.0
 	else:
-		sound_played = false
+		$Timer.stop()
 		object.damage = false
 		current_count = 0
 		object.modulate.a = 1.0
@@ -31,3 +30,6 @@ func update(object):
 		else:
 			emit_signal("pop")
 			emit_signal("push", "IdleState")
+
+func _on_Timer_timeout():
+	current_count += 1
