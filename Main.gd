@@ -13,11 +13,11 @@ func _process(delta):
 		
 		if get_tree().paused:
 			$CanvasLayer/ColorRect.modulate  = Color(1, 1, 1, 0.5)
-			$CanvasLayer/Label.show()
+			$CanvasLayer/PauseLabel.show()
 			$PauseTimer.start()
 		else:
 			$CanvasLayer/ColorRect.modulate  = Color(1, 1, 1, 0.0)
-			$CanvasLayer/Label.hide()
+			$CanvasLayer/PauseLabel.hide()
 			$PauseTimer.start()
 	
 func reset():
