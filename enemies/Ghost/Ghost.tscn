@@ -91,6 +91,9 @@ script = ExtResource( 23 )
 [node name="HitSound" type="AudioStreamPlayer" parent="FSM/HitState"]
 stream = ExtResource( 24 )
 
+[node name="Timer" type="Timer" parent="FSM/HitState"]
+wait_time = 0.1
+
 [node name="HuntState" type="Node" parent="FSM"]
 script = ExtResource( 25 )
 
@@ -103,4 +106,5 @@ script = ExtResource( 26 )
 [connection signal="animation_finished" from="AnimatedSprite" to="FSM/ShriekState" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="AgroRadius" to="." method="_on_AgroRadius_body_entered"]
 [connection signal="die" from="FSM/DieState" to="." method="_on_DieState_die"]
+[connection signal="timeout" from="FSM/HitState/Timer" to="FSM/HitState" method="_on_Timer_timeout"]
 [connection signal="timeout" from="FSM/HuntState/Timer" to="FSM/HuntState" method="_on_Timer_timeout"]
