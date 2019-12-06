@@ -15,10 +15,15 @@ func reset():
 func update(object):
 	animation_running = true
 	object.get_node("AnimatedSprite").animation = "attack-2"
+	object.get_node("AnimatedSprite").play()
 	
 	if !sound_played:
 		sound_played =  true
 		$Attack2Sound.play()
+		
+	if object.damage:
+		emit_signal("pop")
+		emit_signal("push", "HitState")
 	
 	if attack_object_front:
 		if object.get_node("AnimatedSprite").frame == 3:
@@ -26,8 +31,6 @@ func update(object):
 	elif attack_object_back:
 		if object.get_node("AnimatedSprite").frame == 3:
 			attack(attack_object_back, object)
-	
-	object.get_node("AnimatedSprite").play()
 
 func _on_AnimatedSprite_animation_finished():
 	if animation_running:
