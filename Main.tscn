@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://backgroud/background.png" type="Texture" id=2]
 [ext_resource path="res://backgroud/BackGround.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/Ghost/Ghost.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://music/09 Fire in the Hole.ogg" type="AudioStream" id=6]
-[ext_resource path="res://gui/pause/Pause.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/Demon/Demon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://music/09 Fire in the Hole.ogg" type="AudioStream" id=7]
+[ext_resource path="res://gui/pause/Pause.tscn" type="PackedScene" id=8]
 
 [node name="Main" type="Node"]
 pause_mode = 2
@@ -28,7 +29,7 @@ texture = ExtResource( 2 )
 pause_mode = 1
 collision_layer = 4
 collision_mask = 0
-tile_data = PoolIntArray( 65589, 1, 0, 131125, 0, 0, 327710, 1, 0, 393246, 0, 0, 458766, 1, 0, 458802, 6, 0, 458803, 4, 0, 458813, 4, 0, 458823, 4, 0, 458833, 5, 0, 524302, 0, 0, 524338, 7, 0, 524339, 3, 0, 524349, 3, 0, 524359, 3, 0, 524369, 8, 0 )
+tile_data = PoolIntArray( 65589, 1, 0, 131125, 0, 0, 327710, 1, 0, 393246, 0, 0, 458766, 1, 0, 458802, 6, 0, 458803, 4, 0, 458813, 4, 0, 458823, 4, 0, 458833, 5, 0, 458834, 4, 0, 458844, 4, 0, 458854, 6, 0, 524302, 0, 0, 524338, 7, 0, 524339, 3, 0, 524349, 3, 0, 524359, 3, 0, 524369, 8, 0, 524370, 3, 0, 524380, 3, 0, 524390, 8, 0 )
 
 [node name="Ghost" parent="." instance=ExtResource( 4 )]
 pause_mode = 1
@@ -42,15 +43,19 @@ position = Vector2( 1675.3, 311.683 )
 pause_mode = 1
 position = Vector2( 1396.42, 26.6571 )
 
-[node name="Player" parent="." instance=ExtResource( 5 )]
+[node name="Demon" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2375.82, 164.938 )
+scale = Vector2( 3, 3 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
 pause_mode = 1
 position = Vector2( 501.172, 299.71 )
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 pause_mode = 1
-stream = ExtResource( 6 )
+stream = ExtResource( 7 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Pause" parent="CanvasLayer" instance=ExtResource( 7 )]
+[node name="Pause" parent="CanvasLayer" instance=ExtResource( 8 )]
 [connection signal="dead" from="Player" to="." method="_on_Player_dead"]
