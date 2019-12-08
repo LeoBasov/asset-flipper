@@ -37,6 +37,7 @@ radius = 33.7016
 height = 13.8239
 
 [node name="Demon" type="KinematicBody2D"]
+pause_mode = 1
 script = ExtResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]

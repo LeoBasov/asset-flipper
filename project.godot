@@ -22,7 +22,7 @@ _global_script_class_icons={
 
 config/name="Asset Flipper"
 run/main_scene="res://gui/main_menu/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://gui/main_menu/title.png"
 
 [autoload]
 
